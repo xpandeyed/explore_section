@@ -1,115 +1,241 @@
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+    return MaterialApp(home: Home());
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class Home extends StatelessWidget {
+  final TextEditingController _textController = TextEditingController();
+  void handleSubmitted(text) async {
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
   }
-
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text("Explore"),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.black54,
+          child: Column(
+            children: <Widget>[
+              Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.amberAccent, width: 2.0)),
+                child: Row(
+                  children: [
+                    Text("Play and earn coins"),
+                  ],
+                ),
+              ),
+              CarouselSlider.builder(
+                itemCount: 15,
+                options: CarouselOptions(
+                    autoPlay: true,
+                    enlargeCenterPage: false,
+                    autoPlayInterval: Duration(seconds: 2)),
+                itemBuilder:
+                    (BuildContext context, int itemIndex, int pageViewIndex) =>
+                        Container(
+                  child: Image.asset('assets/img1.jpeg'),
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: Text(
+                      "All Subscriptions",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    )),
+                    FlatButton(
+                        color: Colors.grey,
+                        onPressed: () {},
+                        child: Text(
+                          "See More",
+                          style: TextStyle(color: Colors.amber),
+                        ))
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20),
+                child: SizedBox(
+                  height: 200.0,
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 5,
+                      itemBuilder: (BuildContext context, int index) =>
+                          verticalImageContainer('assets/img1.jpeg',
+                              "Car on Sale", "Starting at 5 laks")),
+                ),
+              ),
+              Container(
+                color: Colors.tealAccent,
+                margin: EdgeInsets.all(20),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/img1.jpeg',
+                      height: 50.0,
+                      width: 50.0,
+                    ),
+                    Flexible(
+                        flex: 1,
+                        child: Container(
+                          margin: EdgeInsets.only(left: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("YouTube Premium", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                              Text("by Bruised Vein"),
+                              Text("5/6 friend sharing")
+                            ],
+                          ),
+                        )),
+                    Flexible(
+                      child: Column(
+                        children: [
+                          Text("38/User/Month"),
+                          FlatButton(onPressed: (){}, child: Text("Join"),color: Colors.blue,)
+                        ],
+                      ),
+                      flex: 0,
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
+                color: Colors.blue,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Flexible(
+                      flex: 1,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("What do you want us to list next?"),
+                          Text("Suggest us subscription"),
+                          TextField(
+                            decoration: InputDecoration.collapsed(hintText: "Send a message"),
+                          )
+                        ],
+                      ),
+                    ),
+                    Flexible(flex: 0,child: Icon(Icons.send),)
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.explore),
+            backgroundColor: Colors.black,
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            label: 'Chat',
+            backgroundColor: Colors.black,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.payment),
+            backgroundColor: Colors.black,
+            label: 'Subpay',
+          ),
+        ],
+        currentIndex: 1,
+        selectedItemColor: Colors.blue,
+      ),
     );
   }
+}
+
+Widget verticalImageContainer(image, title, subtitle) {
+  return AspectRatio(
+    aspectRatio: 1 / 1,
+    child: Container(
+      margin: EdgeInsets.only(right: 20),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          image: DecorationImage(
+            image: AssetImage(image),
+            fit: BoxFit.cover,
+          )),
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            gradient: LinearGradient(begin: Alignment.bottomCenter, stops: [
+              .2,
+              .9
+            ], colors: [
+              Colors.black.withOpacity(.9),
+              Colors.black.withOpacity(.3),
+            ])),
+        child: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    width: 50,
+                    child: Text("Upto 70% off"),
+                  )),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    title,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    subtitle,
+                    style: TextStyle(color: Colors.white, fontSize: 8),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
 }
