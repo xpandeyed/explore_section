@@ -22,20 +22,49 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text("Explore"),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Container(
+                width: 35,
+                color: Colors.blue,
+                child: Icon(Icons.add, color: Colors.white,),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Container(
+                width: 35,
+                color: Colors.blue,
+                child: Icon(Icons.add_shopping_cart_rounded, color: Colors.white,),
+              ),
+            ),
+          ),
+        ],
       ),
+
       body: SingleChildScrollView(
         child: Container(
           color: Colors.black54,
           child: Column(
             children: <Widget>[
               Container(
+                padding: EdgeInsets.all(14),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.amberAccent, width: 2.0)),
                 child: Row(
                   children: [
-                    Text("Play and earn coins"),
+                    Icon(Icons.circle),
+                    Expanded( child: Text("Play and Earn Coins")),
+                    Icon(Icons.arrow_circle_right)
                   ],
                 ),
               ),
