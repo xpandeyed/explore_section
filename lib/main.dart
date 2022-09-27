@@ -72,9 +72,19 @@ class Home extends StatelessWidget {
                     border: Border.all(color: Colors.amberAccent, width: 2.0)),
                 child: Row(
                   children: [
-                    Icon(Icons.circle, color: Colors.yellow),
-                    Expanded(child: Text("Play and Earn Coins", style: TextStyle(color: Colors.white),)),
-                    Icon(Icons.arrow_circle_right, color: Colors.white,)
+                    Container(child: Icon(Icons.circle, color: Colors.yellow), margin: EdgeInsets.only(right: 10),),
+                    Expanded(
+                        child: Text(
+                      "Play and Earn Coins",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18),
+                    )),
+                    Icon(
+                      Icons.arrow_circle_right,
+                      color: Colors.white,
+                    )
                   ],
                 ),
               ),
@@ -102,8 +112,10 @@ class Home extends StatelessWidget {
                     Expanded(
                         child: Text(
                       "All Subscriptions",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF747475)),
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF747475)),
                     )),
                     FlatButton(
                         color: Color(0xFF404040),
@@ -135,10 +147,12 @@ class Home extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Text(
-                          "Public Groups",
-                          style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF747475)),
-                        )),
+                      "Public Groups",
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF747475)),
+                    )),
                     FlatButton(
                         color: Color(0xFF404040),
                         onPressed: () {},
@@ -193,7 +207,10 @@ class Home extends StatelessWidget {
                     Flexible(
                       child: Column(
                         children: [
-                          Text("38/User/Month", style: TextStyle(color: Colors.white),),
+                          Text(
+                            "38/User/Month",
+                            style: TextStyle(color: Colors.white),
+                          ),
                           FlatButton(
                             onPressed: () {},
                             child: Text("Join"),
@@ -223,7 +240,7 @@ class Home extends StatelessWidget {
                         flex: 1,
                         child: Container(
                           margin:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                              EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -250,7 +267,10 @@ class Home extends StatelessWidget {
                     Flexible(
                       child: Column(
                         children: [
-                          Text("38/User/Month", style: TextStyle(color: Colors.white),),
+                          Text(
+                            "38/User/Month",
+                            style: TextStyle(color: Colors.white),
+                          ),
                           FlatButton(
                             onPressed: () {},
                             child: Text("Join"),
@@ -280,7 +300,7 @@ class Home extends StatelessWidget {
                         flex: 1,
                         child: Container(
                           margin:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                              EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -307,7 +327,10 @@ class Home extends StatelessWidget {
                     Flexible(
                       child: Column(
                         children: [
-                          Text("38/User/Month", style: TextStyle(color: Colors.white),),
+                          Text(
+                            "38/User/Month",
+                            style: TextStyle(color: Colors.white),
+                          ),
                           FlatButton(
                             onPressed: () {},
                             child: Text("Join"),
@@ -337,7 +360,7 @@ class Home extends StatelessWidget {
                         flex: 1,
                         child: Container(
                           margin:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                              EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -364,7 +387,10 @@ class Home extends StatelessWidget {
                     Flexible(
                       child: Column(
                         children: [
-                          Text("38/User/Month", style: TextStyle(color: Colors.white),),
+                          Text(
+                            "38/User/Month",
+                            style: TextStyle(color: Colors.white),
+                          ),
                           FlatButton(
                             onPressed: () {},
                             child: Text("Join"),
@@ -382,7 +408,7 @@ class Home extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "Show all public groups.",
-                    style: TextStyle(color: Color(0xFF9f9f9e)),
+                    style: TextStyle(color: Color(0xFF9f9f9e), fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
                 margin: EdgeInsets.all(10),
@@ -537,7 +563,10 @@ Widget verticalImageContainer(image, title, subtitle) {
                   ),
                   Text(
                     subtitle,
-                    style: TextStyle(color: Color(0xFfebdc4c), fontSize: 14, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Color(0xFfebdc4c),
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold),
                   )
                 ],
               )
