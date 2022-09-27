@@ -103,14 +103,14 @@ class Home extends StatelessWidget {
                         child: Text(
                       "All Subscriptions",
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF747475)),
                     )),
                     FlatButton(
-                        color: Colors.grey,
+                        color: Color(0xFF404040),
                         onPressed: () {},
                         child: Text(
                           "See More",
-                          style: TextStyle(color: Colors.amber),
+                          style: TextStyle(color: Color(0xFFebdc4c)),
                         ))
                   ],
                 ),
@@ -126,6 +126,27 @@ class Home extends StatelessWidget {
                       itemBuilder: (BuildContext context, int index) =>
                           verticalImageContainer(image_paths[index],
                               "Amazon Prime", "Starting at 100")),
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: Text(
+                          "Public Groups",
+                          style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF747475)),
+                        )),
+                    FlatButton(
+                        color: Color(0xFF404040),
+                        onPressed: () {},
+                        child: Text(
+                          "See More",
+                          style: TextStyle(color: Color(0xFFebdc4c)),
+                        ))
+                  ],
                 ),
               ),
               Container(
@@ -146,6 +167,177 @@ class Home extends StatelessWidget {
                         child: Container(
                           margin:
                               EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "YouTube Premium",
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                              Text(
+                                "by Bruised Vein",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Text(
+                                "5/6 friend sharing",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue),
+                              )
+                            ],
+                          ),
+                        )),
+                    Flexible(
+                      child: Column(
+                        children: [
+                          Text("38/User/Month", style: TextStyle(color: Colors.white),),
+                          FlatButton(
+                            onPressed: () {},
+                            child: Text("Join"),
+                            color: Colors.blue,
+                          )
+                        ],
+                      ),
+                      flex: 0,
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    color: Color(0xFF2a2b2a),
+                    borderRadius: BorderRadius.circular(10)),
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/youtube.png',
+                      height: 50.0,
+                      width: 50.0,
+                    ),
+                    Flexible(
+                        flex: 1,
+                        child: Container(
+                          margin:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "YouTube Premium",
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                              Text(
+                                "by Bruised Vein",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Text(
+                                "5/6 friend sharing",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue),
+                              )
+                            ],
+                          ),
+                        )),
+                    Flexible(
+                      child: Column(
+                        children: [
+                          Text("38/User/Month", style: TextStyle(color: Colors.white),),
+                          FlatButton(
+                            onPressed: () {},
+                            child: Text("Join"),
+                            color: Colors.blue,
+                          )
+                        ],
+                      ),
+                      flex: 0,
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    color: Color(0xFF2a2b2a),
+                    borderRadius: BorderRadius.circular(10)),
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/youtube.png',
+                      height: 50.0,
+                      width: 50.0,
+                    ),
+                    Flexible(
+                        flex: 1,
+                        child: Container(
+                          margin:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "YouTube Premium",
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                              Text(
+                                "by Bruised Vein",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Text(
+                                "5/6 friend sharing",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue),
+                              )
+                            ],
+                          ),
+                        )),
+                    Flexible(
+                      child: Column(
+                        children: [
+                          Text("38/User/Month", style: TextStyle(color: Colors.white),),
+                          FlatButton(
+                            onPressed: () {},
+                            child: Text("Join"),
+                            color: Colors.blue,
+                          )
+                        ],
+                      ),
+                      flex: 0,
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    color: Color(0xFF2a2b2a),
+                    borderRadius: BorderRadius.circular(10)),
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/youtube.png',
+                      height: 50.0,
+                      width: 50.0,
+                    ),
+                    Flexible(
+                        flex: 1,
+                        child: Container(
+                          margin:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -337,15 +529,15 @@ Widget verticalImageContainer(image, title, subtitle) {
                     title,
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 14,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Text(
                     subtitle,
-                    style: TextStyle(color: Colors.white, fontSize: 8),
+                    style: TextStyle(color: Color(0xFfebdc4c), fontSize: 14, fontWeight: FontWeight.bold),
                   )
                 ],
               )
